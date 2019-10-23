@@ -1,0 +1,25 @@
+<div class="page page2">
+  <div class="">
+    <h2>Review & Confirm</h2>
+    <p>Please review and confirm the details below before proceeding.</p>
+  </div>
+  <div class="row">
+    <div class="col-6 col-xl-12">
+      <h4>Currency</h4>
+      <p>{{formService.formdata.currency}}</p>
+    </div>
+    <div class="col-md-6 col-xl-12">
+      <h4>AccountType</h4>
+      <p>{{accountTypeObj.description}}</p>
+    </div>
+  </div>
+  <div class="">
+    <a routerLink="/page2">< Edit details</a>
+  </div>
+  <div class="text-center">Your account will be opened immediately after the confirmation by authorization code and is immediately ready for use. If in doubt, please contact the advisor via Citiphone.</div>
+  <div class="text-center form-btns-vertical">
+    <button class="btn btn-dark form-btn btn-default" (click)="confirmForm()">Next</button>
+    <button class="btn btn-link form-btn" (click)="cancel()">Cancel</button>
+  </div>
+</div>
+

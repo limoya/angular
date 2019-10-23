@@ -1,0 +1,31 @@
+<div class="page page2">
+  <div class="">
+    <h2>Select Account Type{{account}}</h2>
+  </div>
+  <div class="form-block2">
+    <h3>Sole Owner</h3>
+    <p>{{accountObj.title1}} {{accountObj.title2}}</p>
+    <a routerLink="/page1">< Edit relationship account</a>
+  </div>
+  <div class="form-block2">
+    <h3>Please select the account you would like to open</h3>
+    <div class="row">
+      <label class="col-xl-12 col-md-4" *ngFor="let accountType of formService.accountTypeList index as index">
+        <input class="col-1" type="radio" [value]="accountType.id" [(ngModel)]="formService.formdata.accountType" (change)="getCurrencies(index)" />
+        <span>{{accountType.description}}</span>
+      </label>
+    </div>
+    <p class="small">Select currency</p>
+    <div class="form-group">
+      <select class="custom-select-sm" [(ngModel)]="formService.formdata.currency">
+        <option [value]="currency.id" *ngFor="let currency of formService.formdata.currencies">{{currency.description}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="text-center">Your account will be opened immediately after the confirmation by authorization code and is immediately ready for use. If in doubt, please contact the advisor via Citiphone.</div>
+  <div class="text-center form-btns-vertical">
+    <button class="btn btn-dark form-btn btn-default" (click)="nextPage()">Next</button>
+    <button class="btn btn-link form-btn" (click)="cancel()">Cancel</button>
+  </div>
+</div>
+

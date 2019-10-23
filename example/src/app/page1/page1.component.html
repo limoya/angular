@@ -1,0 +1,25 @@
+<div class="page page1">
+  <div class="">
+    <h2>Select Account</h2>
+    <p>Please select the relationship account</p>
+  </div>
+  <label class="form-block1 form-group align-items-center row" *ngFor="let account of formService.accountList index as index">
+    <!-- <div class="fixed-box">
+    <span>Background Color : #</span>
+    <input type="text" [(ngModel)]="bgColor" maxlength="6" />
+  </div>-->
+    <!--<span class="form-check-input"></span>-->
+    <input type="radio" name="account" class="col-1" [value]="account.id" [(ngModel)]="formService.formdata.account">
+    <div class="col-11">
+      <h5>{{account.type}}</h5>
+      <p>{{account.title1}} {{account.title2}}</p>
+    </div>
+  </label>
+  <app-page2 [account]="formService.formdata.account" (page1)="aaa($event)"></app-page2>
+  <div class="text-center">Your account will be opened immediately after the confirmation by authorization code and is immediately ready for use. If in doubt, please contact the advisor via Citiphone.</div>
+  <div class="text-center form-btns-vertical">
+    <button class="btn btn-dark form-btn btn-default" (click)="nextPage()">Next</button>
+    <button class="btn btn-link form-btn" (click)="cancelRadio()">Cancel</button>
+  </div>
+</div>
+
