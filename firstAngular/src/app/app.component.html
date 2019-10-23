@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<nav>
+  <!-- routerLinkActive="active" 激活时的class，字符串，可以加空格传多个-->
+  <!--routerLInkActiveOptions 设置exact true 可以防止父子路由一起激活-->
+  <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashborad</a>
+  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<!--<app-heroes></app-heroes>-->
+<app-message></app-message>
