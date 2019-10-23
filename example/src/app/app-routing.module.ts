@@ -21,7 +21,6 @@ const routes: Routes = [
   },
   {
     path: 'page3',
-
     component: Page3Component
   },
 ];
